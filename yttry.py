@@ -81,3 +81,4 @@ def youtube_search(q, max_results=50, order="relevance", token=None, location=No
 search_term = input("Enter the search term: ")
 search_dict = youtube_search(search_term)
 df = pd.DataFrame(search_dict)
+print(df.head())
