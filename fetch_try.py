@@ -69,7 +69,7 @@ for i in range(5):
     viewcount_list.append(video.viewcount)
     videoid_list.append(video.videoid)
 df=pd.DataFrame(data={'Title':title_list,'Author':author_list,'VideoID':videoid_list,'View Count':viewcount_list,'Likes':likes_list,'Dislikes':dislikes_list})
-        
+print(df.head())        
 
 
     
