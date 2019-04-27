@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}"/>
+  </head>
+  <body background="static/Search_132.png">
+    <div class="s132">
+      <form action="/searchQuery" method="POST">
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <!--<div class="input-select">
+              <select data-trigger="" name="choices-single-defaul">
+                <option placeholder="">Category</option>
+                <option>Subject A</option>
+                <option>Subject B</option>
+                <option>Subject C</option>
+              </select>
+            </div>-->
+          </div>
+          <div class="input-field second-wrap">
+            <input id="search" type="text" placeholder="Enter search term" name="search_text"/>
+          </div>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="submit" value="Search query">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

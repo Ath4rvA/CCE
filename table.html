@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	.haha{ 
+		position: relative;
+		width: 1336;
+		height:800;
+		
+	}	
+
+	.top-left{
+		position: absolute;
+		top:8px;
+		left:16px;
+		font-size: 75px;
+		color: brown;
+	}
+
+	table,th,td{
+		font-family: 'Poppins', sans-serif;
+		padding: 10px;
+		border-spacing: 10px;
+		border-collapse: separate;
+		border-style: thick;
+	}	
+	</style>
+	
+</head>
+<body background="static/clock.jpg">
+<div class='haha'>
+<!--<img src='clock.jpg'>
+-->
+<div class ="top-left">Curated List</div>
+</div>
+<br><br><br><br><br><br><br><br>
+{{data | safe}}
+</body>
+</html>

@@ -5,7 +5,7 @@ from oauth2client.tools import argparser
 DEVELOPER_KEY = "AIzaSyA3iMXsV9CeY30qCB0fYb3UGOuhwT9scJI"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
-
+youtube=YOUTUBE_API_SERVICE_NAME
 
 
 
@@ -47,10 +47,25 @@ def geo_query(video_id):
 
     video_response = youtube.videos().list(
         id=video_id,
-        part='snippet, recordingDetails, statistics'
+        part='snippet, recordingDetails, statistics, contentDetails'
 
     ).execute()
 
     return video_response
+'''
+def get_comments(youtube, video_id, channel_id):
+  results = youtube.commentThreads().list(
+    part="snippet",
+    videoId=video_id,
+    channelId=channel_id,
+    textFormat="plainText"
+  ).execute()
 
+  for item in results["items"]:
+    comment = item["snippet"]["topLevelComment"]
+    author = comment["snippet"]["authorDisplayName"]
+    text = comment["snippet"]["textDisplay"]
+    print( "Comment by %s: %s" % (author, text))
 
+  return results["items"]
+'''
